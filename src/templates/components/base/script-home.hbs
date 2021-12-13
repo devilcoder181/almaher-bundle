@@ -1,0 +1,41 @@
+
+<script src="{{assets}}/scripts/lib/modernizr.min.js"></script>
+<script src="{{assets}}/scripts/lib/jquery-3.6.0.min.js"></script>
+<script src="{{assets}}/scripts/lib/jquery-migrate-3.3.2.min.js"></script>
+<script src="{{assets}}/scripts/min/home_plugins.js"></script>
+<script src="{{assets}}/scripts/min/home.js"></script>
+
+ <script>
+ var testSwiper = new Swiper(".banner_wrapper .swiper-container", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      speed: 600,
+      breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+        pagination: {
+            el: ".banner_wrapper .swiper-pagination",
+            clickable:true,
+        },
+        on: {
+            init: function () {
+            window.bLazy.revalidate();
+            },
+            slideChange: function () {
+            window.bLazy.revalidate();
+            }
+        },
+    });
+</script>
+
